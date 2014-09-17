@@ -8,13 +8,13 @@ This program will do the following:
 ''' 
 
   sum = 0
-  count = 0
 
-  for i in range(len(x) - 1) :
+  for i in range(len(x)) :
+    assert (len(x) == len(y)) # not sure if corrrect syntax
     sum += (y[i] - x[i]) ** 2 
     count += 1
   
-  rmse = (sum / count) ** (1/2)
+  rmse = (sum / len(x)) ** (1/2)
 
   assert (5 < rmse > 0)
 
