@@ -12,7 +12,6 @@ This program will do the following:
   for i in range(len(x)) :
     assert (len(x) == len(y)) # not sure if corrrect syntax
     sum += (y[i] - x[i]) ** 2 
-    count += 1
   
   rmse = (sum / len(x)) ** (1/2)
 
