@@ -15,6 +15,6 @@ This program will do the following:
   
   rmse = (sum / len(x)) ** (1/2)
 
-  assert (5 < rmse > 0)
+  assert (5 > rmse > 0)
 
   return rmse
