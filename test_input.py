@@ -24,10 +24,13 @@ def main():
 
 		rating = str(rating / count)
 
-		movieid_avg_rate[movie_id] = rating[:3]			
-
+		movieid_avg_rate[movie_id] = rating[:3]		
+	
 		inFile.close()
 
-	print(movieid_avg_rate.items())
+	outFile = open ('cache.txt', 'w')
+	outFile.write(str(movieid_avg_rate.items()))
+	outFile.close()
+
 main()
 
