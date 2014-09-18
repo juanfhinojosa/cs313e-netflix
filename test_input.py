@@ -24,7 +24,7 @@ def main():
 
 		rating = rating / count
 
-		movieid_avg_rate['movie_id'] = 'rating'			
+		movieid_avg_rate[movie_id] = rating			
 
 		inFile.close()
 
