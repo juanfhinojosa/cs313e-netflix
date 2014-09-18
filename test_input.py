@@ -20,6 +20,8 @@ def main():
 				customer_id = line[:-(line.find(','))]
 				line.replace(customer_id, '')
 				rating += int(line[0])
+				count += 1
+
 		rating = rating / count
 
 		movieid_avg_rate['movie_id'] = 'rating'			
