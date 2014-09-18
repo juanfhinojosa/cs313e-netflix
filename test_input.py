@@ -3,7 +3,8 @@ def main():
 	# Open remote directory to read data
 	movieid_avg_rate = {}
 	cust_avg_rate = {}
-	for i in range (1, 1000):
+	counter = 0
+	for i in range (1, 17771):
 		changing_num = str(i)
 		while len(changing_num) < 7:
 			changing_num = '0' + changing_num
@@ -27,7 +28,7 @@ def main():
 		movieid_avg_rate[movie_id] = rating			
 
 		inFile.close()
-
-	print(movieid_avg_rate)
+		counter += 1
+	print(counter)
 main()
 
