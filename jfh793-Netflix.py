@@ -18,21 +18,7 @@ def root_mean_squared_error (x, y) :
   assert (5 > rmse > 0)
 
   return rmse
-
 # /u/prat0318/netflix-tests/
-
-def Predict( customer , movie ):
-  global C
-  global B
-  
-  Total_Cust_Avg = 3.6741013034524364
-  Total_Mov_Avg = 3.228137194500105
-  
-  Cust_Diff = Total_Cust_Avg - C[customer]
-  Movie_Diff = Total_Mov_Avg - B[movie]
-  
-  Prediction = Cust_Diff + Movie_Diff + Total_Mov_Avg 
-  return Prediction
 
 def Cust( customer ):
   
@@ -75,11 +61,21 @@ def Answ( customer ):
   '''
   return Probe[customer]
 
+def Predict( customer , movie ):
+
+  Total_Cust_Avg = 3.6741013034524364
+  Total_Mov_Avg = 3.228137194500105
+
+  Cust_Diff = Total_Cust_Avg - float(Cust(customer))
+  Movie_Diff = Total_Mov_Avg - float(Mov(movie))
+
+  Prediction = Cust_Diff + Movie_Diff + Total_Mov_Avg
+  return Prediction
+
 def main():
-
-  print(Predict(172856 , 4446))
   
-
+  print(Predict(1657689 , 4446))
+  
 main()
 
   
