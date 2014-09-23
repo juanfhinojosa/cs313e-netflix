@@ -31,37 +31,57 @@ def Predict( customer , movie ):
   Cust_Diff = Total_Cust_Avg - C[customer]
   Movie_Diff = Total_Mov_Avg - B[movie]
   
-  return Cust_Diff + Movie_Diff + Total_Mov_Avg 
+  Prediction = Cust_Diff + Movie_Diff + Total_Mov_Avg 
+  return Prediction
 
-def main():
+def Cust( customer ):
   
   AvgCustRt = 0
   AverageRating = open('/u/prat0318/netflix-tests/ctd446-userAverageRating.txt' , 'r')
   C = eval(AverageRating.readline())
+  '''
   for items in C:
     AvgCustRt += float(C[items])
   
   finalavg = (AvgCustRt / len(C))
   print(finalavg)
+  '''
+  customer = str(customer)
+  if customer in C:
+    return C[customer]
 
-
+def Mov( movie ):
   
   AvgMviRt = 0
   AverageMviRating = open('/u/prat0318/netflix-tests/ctd446-movieAverageRating.txt' , 'r')
   B = eval(AverageMviRating.readline())
+  '''
   for things in B:
     AvgMviRt += float(B[things])
   
   MvAvg = (AvgMviRt / len(B))
   print(MvAvg)
+  '''
+  movie = str(movie)
+  return B[movie]
 
+def Answ( customer ):
+
+  Probe = open('/u/prat0318/netflix-tests/cct667-ProbeCacheAnswers.txt' , 'r')
+  Probe = eval(F.readline())
   '''
-  F = open('/u/prat0318/netflix-tests/cct667-ProbeCacheAnswers.txt' , 'r')
-  File = F.read()
-  File = File.split()
-  #for i in range(0 , len(File) , 3):
-    #print(File[i])
+  for items in Probe:
+    print(items)
   '''
+  return Probe[customer]
+
+def main():
+
+  print(Predict(172856 , 4446))
+  
 
 main()
+
+  
+
 
