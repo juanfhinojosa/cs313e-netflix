@@ -53,13 +53,29 @@ def Mov( movie ):
 
 def Answ( customer ):
 
+  '''
   Probe = open('/u/prat0318/netflix-tests/cct667-ProbeCacheAnswers.txt' , 'r')
-  Probe = eval(F.readline())
+  Probe = eval(Probe.readline())
   '''
   for items in Probe:
     print(items)
   '''
-  return Probe[customer]
+  #return Probe[customer]
+  return Probe
+  '''
+
+  Probe = open('/u/prat0318/netflix-tests/cct667-ProbeCacheAnswers.txt' , 'r')
+  Answers_Dict = {}
+
+  CustnMov = Probe.readline()
+  while CustnMov:
+    CustnMov = CustnMov.rstrip ('\n')
+    CustnMov = CustnMov.split()
+    Answers = CustnMov[2]
+    CustnMov = CustnMov[0] + CustnMov[1]
+    Answers_Dict[CustnMov] = Answers
+    CustnMov = Probe.readline()
+
 
 def Predict( customer , movie ):
 
