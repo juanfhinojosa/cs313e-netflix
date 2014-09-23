@@ -1,5 +1,4 @@
 def main():
-	import os
 	# Open remote directory to read data
 	movieid_avg_rate = {}
 	cust_avg_rate = {}
