@@ -51,15 +51,15 @@ def Mov( movie ):
   movie = str(movie)
   return B[movie]
 
-def Answ( customer ):
+def Answ( customer , movie ):
 
   '''
   Probe = open('/u/prat0318/netflix-tests/cct667-ProbeCacheAnswers.txt' , 'r')
   Probe = eval(Probe.readline())
-  '''
+  
   for items in Probe:
     print(items)
-  '''
+  
   #return Probe[customer]
   return Probe
   '''
@@ -67,15 +67,15 @@ def Answ( customer ):
   Probe = open('/u/prat0318/netflix-tests/cct667-ProbeCacheAnswers.txt' , 'r')
   Answers_Dict = {}
 
-  CustnMov = Probe.readline()
-  while CustnMov:
-    CustnMov = CustnMov.rstrip ('\n')
+  
+  for line in Probe:
+    CustnMov = line
     CustnMov = CustnMov.split()
     Answers = CustnMov[2]
-    CustnMov = CustnMov[0] + CustnMov[1]
+    CustnMov = CustnMov[1] + CustnMov[0]
     Answers_Dict[CustnMov] = Answers
-    CustnMov = Probe.readline()
-
+  customermovie = str(customer) + str(movie)
+  return Answers_Dict[customermovie]
 
 def Predict( customer , movie ):
 
@@ -91,6 +91,7 @@ def Predict( customer , movie ):
 def main():
   
   print(Predict(1657689 , 4446))
+  print(Answ(1657689 , 4446))
   
 main()
 
