@@ -1,6 +1,9 @@
-import sys
-from jfh793-Netflix import Netflix_Solve
-# ----
-# main
-# ----
-Netflix_Solve(sys.stdin, sys.stdout)
+from Netflix import Netflix_Solve
+global_id = ''
+input_file = open("Run.Netflix.in.txt", "r")
+output_file = open("Run.Netflix.out.txt", "a")
+
+Netflix_Solve(input_file, output_file)
+
+input_file.close()
+output_file.close()
