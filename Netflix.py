@@ -1,6 +1,7 @@
+global_list = []
+global_id = []
 
-def collatz_read (r) :
-
+def Netflix_Read (r) :
   for items in r:
     items = items.rstrip()
     if ":" in items:
@@ -37,44 +38,27 @@ def Cust( customer ):
   AvgCustRt = 0
   AverageRating = open('/u/prat0318/netflix-tests/ctd446-userAverageRating.txt' , 'r')
   C = eval(AverageRating.readline())
-  '''
-  for items in C:
-    AvgCustRt += float(C[items])
-  
-  finalavg = (AvgCustRt / len(C))
-  print(finalavg)
-  '''
+
   customer = str(customer)
   if customer in C:
     return C[customer]
+
+  AverageRating.close()
 
 def Mov( movie ):
   
   AvgMviRt = 0
   AverageMviRating = open('/u/prat0318/netflix-tests/ctd446-movieAverageRating.txt' , 'r')
   B = eval(AverageMviRating.readline())
-  '''
-  for things in B:
-    AvgMviRt += float(B[things])
-  
-  MvAvg = (AvgMviRt / len(B))
-  print(MvAvg)
-  '''
+
   movie = str(movie)
   return B[movie]
 
+  AverageMviRating.close()
+
 def Answ( customer , movie ):
 
-  '''
-  Probe = open('/u/prat0318/netflix-tests/cct667-ProbeCacheAnswers.txt' , 'r')
-  Probe = eval(Probe.readline())
-  
-  for items in Probe:
-    print(items)
-  
-  #return Probe[customer]
-  return Probe
-  '''
+
 
   Probe = open('/u/prat0318/netflix-tests/cct667-ProbeCacheAnswers.txt' , 'r')
   Answers_Dict = {}
@@ -89,35 +73,30 @@ def Answ( customer , movie ):
   customermovie = str(customer) + str(movie)
   return Answers_Dict[customermovie]
 
+  Probe.close()
+
 def Predict( customer , movie ):
 
   Total_Cust_Avg = 3.6741013034524364
   Total_Mov_Avg = 3.228137194500105
 
-  Cust_Diff = Total_Cust_Avg - float(Cust(customer))
-  Movie_Diff = Total_Mov_Avg - float(Mov(movie))
+  Cust_Diff = Total_Cust_Avg - eval(Cust(customer))
+  Movie_Diff = Total_Mov_Avg - eval(Mov(movie))
 
   Prediction = Cust_Diff + Movie_Diff + Total_Mov_Avg
   return Prediction
 
 def Netflix_Print(w, i, j, v) :
-  w.write(str(i) + ':' + '\n')
+  if i not in global_id :
+    global_id.append(i)
+    w.write(str(i) + ":" + '\n')
   w.write(str(v) + '\n')
 
 def Netflix_Solve(r , w):
-  a = collatz_read(r)
+  a = Netflix_Read(r)
+  if not a:
+    return 
   for n in a:
     i, j = n[0], n[1]
-    v = Predict(i, j)
+    v = Predict(j, i)
     Netflix_Print(w, i, j, v)
-
-def main():
-  
-  print(Predict(1657689 , 4446))
-  print(Answ(1657689 , 4446))
-  
-main()
-
-  
-
-
