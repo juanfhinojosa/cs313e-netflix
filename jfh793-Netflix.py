@@ -1,3 +1,15 @@
+
+def collatz_read (r) :
+
+  for items in r:
+    items = items.rstrip()
+    if ":" in items:
+      movieID = items.replace(":", "")
+    else:
+      s = [movieID, items]
+      global_list.append(s)
+  return global_list
+
 def root_mean_squared_error (x, y) :
 
   '''
@@ -87,6 +99,17 @@ def Predict( customer , movie ):
 
   Prediction = Cust_Diff + Movie_Diff + Total_Mov_Avg
   return Prediction
+
+def Netflix_Print(w, i, j, v) :
+  w.write(str(i) + ':' + '\n')
+  w.write(str(v) + '\n')
+
+def Netflix_Solve(r , w):
+  a = collatz_read(r)
+  for n in a:
+    i, j = n[0], n[1]
+    v = Predict(i, j)
+    Netflix_Print(w, i, j, v)
 
 def main():
   
