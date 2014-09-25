@@ -1,5 +1,35 @@
 global_list = []
 global_id = []
+def Cust_dict():
+
+  AverageRating = open('/u/prat0318/netflix-tests/savant-cacheUsers.txt' , 'r')
+  return eval(AverageRating.read())
+  AverageRating.close()
+
+def Movie_dict():
+  AverageMviRating = open('/u/prat0318/netflix-tests/ctd446-movieAverageRating.txt' , 'r')
+  B = eval(AverageMviRating.read())
+  return B
+  AverageMviRating.close()
+
+def Answ_dict():
+  Probe = open('/u/prat0318/netflix-tests/cct667-ProbeCacheAnswers.txt' , 'r')
+  Answers_Dict = {}
+  
+  for line in Probe:
+    CustnMov = line
+    CustnMov = CustnMov.split()
+    Answers = CustnMov[2]
+    CustnMov = CustnMov[1] + CustnMov[0]
+    Answers_Dict[CustnMov] = Answers
+
+  Probe.close()
+  return Answers_Dict
+
+
+dict_customer = Cust_dict()
+B = Movie_dict()
+Answers_Dict = Answ_dict()
 
 def Netflix_Read (r) :
   for items in r:
@@ -11,80 +41,47 @@ def Netflix_Read (r) :
       global_list.append(s)
   return global_list
 
-def root_mean_squared_error (x, y) :
-
-  '''
-  This program will do the following:
-    1.  Take 'x' the actual value and 'y' our guess, as inputs
-    2.  Compute Root-Mean-Squared-Error 
-    3.  Output RMSE
-  '''
-
-  sum = 0
-
-  for i in range(len(x)) :
-    assert (len(x) == len(y)) # not sure if corrrect syntax
-    sum += (y[i] - x[i]) ** 2
-
-  rmse = (sum / len(x)) ** (1/2)
-
-  assert (5 > rmse > 0)
-
-  return rmse
-# /u/prat0318/netflix-tests/
+def root_mean_squared_error (a, p) :
+  v = sum(map(lambda x, y : (x - y) ** 2, a, p))
+  return ((v / len(a)) ** (1/2))
 
 def Cust( customer ):
-  
-  AvgCustRt = 0
-  AverageRating = open('/u/prat0318/netflix-tests/ctd446-userAverageRating.txt' , 'r')
-  C = eval(AverageRating.readline())
+ try:
+  m = dict_customer[customer]
+ except KeyError:
+  m = 3.6741013034524364
 
-  customer = str(customer)
-  if customer in C:
-    return C[customer]
-
-  AverageRating.close()
+ if customer in dict_customer:
+  return m
 
 def Mov( movie ):
   
-  AvgMviRt = 0
-  AverageMviRating = open('/u/prat0318/netflix-tests/ctd446-movieAverageRating.txt' , 'r')
-  B = eval(AverageMviRating.readline())
-
   movie = str(movie)
-  return B[movie]
-
-  AverageMviRating.close()
+  if movie in B:
+    return B[movie]
 
 def Answ( customer , movie ):
 
-
-
-  Probe = open('/u/prat0318/netflix-tests/cct667-ProbeCacheAnswers.txt' , 'r')
-  Answers_Dict = {}
-
-  
-  for line in Probe:
-    CustnMov = line
-    CustnMov = CustnMov.split()
-    Answers = CustnMov[2]
-    CustnMov = CustnMov[1] + CustnMov[0]
-    Answers_Dict[CustnMov] = Answers
   customermovie = str(customer) + str(movie)
-  return Answers_Dict[customermovie]
-
-  Probe.close()
+  if customermovie in Answers_Dict:
+    return Answers_Dict[customermovie]
 
 def Predict( customer , movie ):
 
   Total_Cust_Avg = 3.6741013034524364
   Total_Mov_Avg = 3.228137194500105
 
-  Cust_Diff = Total_Cust_Avg - eval(Cust(customer))
-  Movie_Diff = Total_Mov_Avg - eval(Mov(movie))
+  if eval(Cust(customer)) > Total_Cust_Avg :
+    Cust_Diff = eval(Cust(customer)) - Total_Cust_Avg
+  else:
+    Cust_Diff = Total_Cust_Avg - eval(Cust(customer))
+  if eval(Mov(movie)) > Total_Mov_Avg :
+    Movie_Diff = eval(Mov(movie)) - Total_Mov_Avg
+  else:
+    Movie_Diff = Total_Mov_Avg - eval(Mov(movie))
 
   Prediction = Cust_Diff + Movie_Diff + Total_Mov_Avg
-  return Prediction
+  return Prediction 
 
 def Netflix_Print(w, i, j, v) :
   if i not in global_id :
@@ -95,8 +92,15 @@ def Netflix_Print(w, i, j, v) :
 def Netflix_Solve(r , w):
   a = Netflix_Read(r)
   if not a:
-    return 
+    return
+  prediction_list = []
+  actual_list = [] 
   for n in a:
     i, j = n[0], n[1]
     v = Predict(j, i)
+    prediction_list.append(v)
+    y = Answ(j, i)
+    actual_list.append(float(y))
     Netflix_Print(w, i, j, v)
+  z = root_mean_squared_error(actual_list, prediction_list)
+  w.write('RMSE = ' + str(z))
