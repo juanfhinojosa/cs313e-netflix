@@ -1,3 +1,27 @@
+commit 37a01ee34242fc6c77a82d78f1ae2c319e819b33
+Author: Juan Hinojosa <juanfhinojosa@utexas.com>
+Date:   Fri Sep 26 17:06:59 2014 -0500
+
+    Finalized coverage of Netflix
+
+commit c010de4efec3f668140327bf8fc9a1c4a1b6e4fd
+Author: Juan Hinojosa <juanfhinojosa@utexas.com>
+Date:   Fri Sep 26 17:06:09 2014 -0500
+
+    Finalized unit tests that give us 98% coverage
+
+commit 6491181c0972f6d2f75381c6d7a6aeffbbd8dcaa
+Author: Juan Hinojosa <juanfhinojosa@utexas.com>
+Date:   Fri Sep 26 17:02:36 2014 -0500
+
+    Finalized Netflix.py
+
+commit e4d3f0e4ef1b040b45c919f513594dbc5cbf50df
+Author: Juan Hinojosa <juanfhinojosa@utexas.com>
+Date:   Fri Sep 26 17:01:09 2014 -0500
+
+    Finalized html file
+
 commit 3a56b0c22451fa57d38697a02dd3de8a95e3fdaf
 Author: Juan Hinojosa <juanfhinojosa@utexas.com>
 Date:   Fri Sep 26 12:58:42 2014 -0500
