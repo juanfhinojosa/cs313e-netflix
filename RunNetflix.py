@@ -1,4 +1,3 @@
 import sys
-from New_Netflix import Netflix_Solve
-global_id = ''
+from Netflix import Netflix_Solve
 Netflix_Solve(sys.stdin, sys.stdout)
