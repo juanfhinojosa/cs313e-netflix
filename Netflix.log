@@ -1,3 +1,58 @@
+commit 3a56b0c22451fa57d38697a02dd3de8a95e3fdaf
+Author: Juan Hinojosa <juanfhinojosa@utexas.com>
+Date:   Fri Sep 26 12:58:42 2014 -0500
+
+    First tests
+
+commit 6c08919a7792e5f314b40857dc910867211e88ba
+Merge: 0016acd a22585b
+Author: Juan Hinojosa <juanfhinojosa@utexas.com>
+Date:   Thu Sep 25 20:11:38 2014 -0500
+
+    Merge branch 'master' of https://github.com/juanfhinojosa/cs313e-netflix
+
+commit 0016acd09d8d9d237e3e10d1e58e3bf877090aba
+Author: Juan Hinojosa <juanfhinojosa@utexas.com>
+Date:   Thu Sep 25 20:11:12 2014 -0500
+
+    Final
+
+commit a22585b4b8b5a13fddee2601024374ae39552c24
+Author: juanfhinojosa <juanfhinojosa@gmail.com>
+Date:   Thu Sep 25 20:10:30 2014 -0500
+
+    Delete test_input.py
+
+commit 210630a7c908184d6e1b6bc33e5a9b52d359a22c
+Author: juanfhinojosa <juanfhinojosa@gmail.com>
+Date:   Thu Sep 25 20:10:22 2014 -0500
+
+    Delete cache.txt
+
+commit 24155f686cb83954b0ff4477775ecef9b4a221be
+Author: Juan Hinojosa <juanfhinojosa@utexas.com>
+Date:   Thu Sep 25 20:09:50 2014 -0500
+
+    Output
+
+commit d3ad923d932b7b26223646827eb02330d75db538
+Author: Juan Hinojosa <juanfhinojosa@utexas.com>
+Date:   Thu Sep 25 20:08:59 2014 -0500
+
+    Input
+
+commit cd710c8b9b0766e9d02ce3188bf5c742fc10f089
+Author: Juan Hinojosa <juanfhinojosa@utexas.com>
+Date:   Thu Sep 25 20:06:13 2014 -0500
+
+    Log
+
+commit 1e3d6d71efc18f0f7dd2e861ab21638edc55a26b
+Author: Juan Hinojosa <juanfhinojosa@utexas.com>
+Date:   Thu Sep 25 20:05:49 2014 -0500
+
+    Pydoc
+
 commit f3a424e6bd0a614755420f272e3d03116cec5720
 Author: Juan Hinojosa <juanfhinojosa@utexas.com>
 Date:   Thu Sep 25 19:47:31 2014 -0500
