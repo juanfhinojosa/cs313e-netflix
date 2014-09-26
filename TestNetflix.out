@@ -1,7 +1,11 @@
-.....TestNetflix.py:151: ResourceWarning: unclosed file <_io.TextIOWrapper name='/u/prat0318/netflix-tests/savant-cacheMovies.txt' mode='r' encoding='UTF-8'>
-  v = Movie_dict()
-.....
+......................................
 ----------------------------------------------------------------------
-Ran 10 tests in 7.525s
+Ran 38 tests in 7.999s
 
 OK
+Name          Stmts   Miss Branch BrMiss  Cover   Missing
+---------------------------------------------------------
+Netflix          71      2     12      1    96%   97-98
+TestNetflix     122      0      0      0   100%   
+---------------------------------------------------------
+TOTAL           193      2     12      1    99%   
