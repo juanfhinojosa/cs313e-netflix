@@ -1,6 +1,6 @@
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <html><head><title>Python: module Netflix</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head><body bgcolor="#f0f0f8">
 
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
@@ -17,16 +17,26 @@
 <font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
     
 <tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
-<td width="100%"><dl><dt><a name="-Answ"><strong>Answ</strong></a>(customer, movie)</dt></dl>
- <dl><dt><a name="-Answ_dict"><strong>Answ_dict</strong></a>()</dt></dl>
- <dl><dt><a name="-Cust"><strong>Cust</strong></a>(customer)</dt></dl>
- <dl><dt><a name="-Cust_dict"><strong>Cust_dict</strong></a>()</dt></dl>
- <dl><dt><a name="-Mov"><strong>Mov</strong></a>(movie)</dt></dl>
- <dl><dt><a name="-Movie_dict"><strong>Movie_dict</strong></a>()</dt></dl>
- <dl><dt><a name="-Netflix_Read"><strong>Netflix_Read</strong></a>(r)</dt></dl>
- <dl><dt><a name="-Netflix_Solve"><strong>Netflix_Solve</strong></a>(r, w)</dt></dl>
- <dl><dt><a name="-Predict"><strong>Predict</strong></a>(customer, movie)</dt></dl>
- <dl><dt><a name="-root_mean_squared_error"><strong>root_mean_squared_error</strong></a>(a, p)</dt></dl>
+<td width="100%"><dl><dt><a name="-Answ"><strong>Answ</strong></a>(customer, movie)</dt><dd><tt>Raise&nbsp;KeyErrors&nbsp;in&nbsp;case&nbsp;if&nbsp;input&nbsp;is&nbsp;not&nbsp;found&nbsp;in&nbsp;the&nbsp;cache<br>
+If&nbsp;key&nbsp;is&nbsp;found&nbsp;return&nbsp;the&nbsp;value&nbsp;for&nbsp;the&nbsp;specific&nbsp;key</tt></dd></dl>
+ <dl><dt><a name="-Answ_dict"><strong>Answ_dict</strong></a>()</dt><dd><tt>Function&nbsp;will&nbsp;open,&nbsp;read,&nbsp;evaluate,&nbsp;and&nbsp;close&nbsp;answers&nbsp;from&nbsp;the&nbsp;Probe&nbsp;data</tt></dd></dl>
+ <dl><dt><a name="-Cust"><strong>Cust</strong></a>(customer)</dt><dd><tt>Raise&nbsp;KeyErrors&nbsp;in&nbsp;case&nbsp;if&nbsp;input&nbsp;is&nbsp;not&nbsp;found&nbsp;in&nbsp;the&nbsp;cache,&nbsp;and&nbsp;if&nbsp;KeyError&nbsp;is&nbsp;raised&nbsp;return&nbsp;3.22&nbsp;(base&nbsp;value)<br>
+If&nbsp;key&nbsp;is&nbsp;found&nbsp;return&nbsp;the&nbsp;value&nbsp;for&nbsp;the&nbsp;specific&nbsp;key</tt></dd></dl>
+ <dl><dt><a name="-Cust_dict"><strong>Cust_dict</strong></a>()</dt><dd><tt>Function&nbsp;will&nbsp;open&nbsp;file,&nbsp;read&nbsp;contents,&nbsp;evaluate&nbsp;data,&nbsp;and&nbsp;close&nbsp;file&nbsp;from&nbsp;the&nbsp;Average<br>
+Customer&nbsp;Rating&nbsp;cache</tt></dd></dl>
+ <dl><dt><a name="-Mov"><strong>Mov</strong></a>(movie)</dt><dd><tt>Raise&nbsp;KeyErrors&nbsp;in&nbsp;case&nbsp;if&nbsp;input&nbsp;is&nbsp;not&nbsp;found&nbsp;in&nbsp;the&nbsp;cache,&nbsp;and&nbsp;if&nbsp;KeyError&nbsp;is&nbsp;raised&nbsp;return&nbsp;3.22&nbsp;(base&nbsp;value)<br>
+If&nbsp;key&nbsp;is&nbsp;found&nbsp;return&nbsp;the&nbsp;value&nbsp;for&nbsp;the&nbsp;specific&nbsp;key</tt></dd></dl>
+ <dl><dt><a name="-Movie_dict"><strong>Movie_dict</strong></a>()</dt><dd><tt>Function&nbsp;will&nbsp;open&nbsp;file,&nbsp;read&nbsp;contents,&nbsp;evaluate&nbsp;data,&nbsp;and&nbsp;close&nbsp;file&nbsp;from&nbsp;the&nbsp;Average<br>
+Movie&nbsp;Rating&nbsp;cache</tt></dd></dl>
+ <dl><dt><a name="-Netflix_Read"><strong>Netflix_Read</strong></a>(standard_in)</dt><dd><tt>Function&nbsp;will&nbsp;take&nbsp;in&nbsp;the&nbsp;standard_in&nbsp;read&nbsp;by&nbsp;Netflix_Solve,&nbsp;then<br>
+pair&nbsp;up&nbsp;movie&nbsp;ids&nbsp;with&nbsp;its&nbsp;customer&nbsp;id&nbsp;for&nbsp;future&nbsp;computations</tt></dd></dl>
+ <dl><dt><a name="-Netflix_Solve"><strong>Netflix_Solve</strong></a>(inFile, writeFile)</dt><dd><tt>Function&nbsp;will&nbsp;obtain&nbsp;a&nbsp;standard&nbsp;input&nbsp;and&nbsp;read&nbsp;its&nbsp;contents,&nbsp;then&nbsp;the<br>
+program&nbsp;will&nbsp;find&nbsp;the&nbsp;RMSE&nbsp;and&nbsp;Prediction&nbsp;for&nbsp;every&nbsp;pair&nbsp;of&nbsp;customer&nbsp;id&nbsp;<br>
+and&nbsp;movie&nbsp;id</tt></dd></dl>
+ <dl><dt><a name="-Predict"><strong>Predict</strong></a>(customer, movie)</dt><dd><tt>Function&nbsp;will&nbsp;take&nbsp;in&nbsp;the&nbsp;customer&nbsp;id&nbsp;and&nbsp;movie&nbsp;id,&nbsp;which&nbsp;will&nbsp;use&nbsp;them<br>
+to&nbsp;compute&nbsp;our&nbsp;prediction</tt></dd></dl>
+ <dl><dt><a name="-root_mean_squared_error"><strong>root_mean_squared_error</strong></a>(actual_list, prediction_list)</dt><dd><tt>Function&nbsp;will&nbsp;compute&nbsp;the&nbsp;root&nbsp;mean&nbsp;squared&nbsp;error&nbsp;for&nbsp;each&nbsp;pair&nbsp;of&nbsp;actual&nbsp;<br>
+answers&nbsp;and&nbsp;our&nbsp;predictions,&nbsp;and&nbsp;will&nbsp;return&nbsp;the&nbsp;RMSE</tt></dd></dl>
 </td></tr></table><p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#55aa55">
