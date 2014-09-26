@@ -34,7 +34,7 @@ def Cust( customer ):
   try:
   	m = dict_customer[customer]
   except KeyError:
-  	m = 3.22
+  	m = str(3.22)
   finally:
   	return m
 
@@ -42,13 +42,16 @@ def Mov( movie ):
   try:
   	b = AverageMviRating[str(movie)]
   except KeyError:
-  	b = 3.22
+  	b = str(3.22)
   finally:
   	return b
 
 def Answ( customer , movie ):
-  return Answers_Dict[movie + ' ' + customer]
-
+  try:
+  	c = Answers_Dict[movie + ' ' + customer]
+  except KeyError:
+  	c = str()
+  return c
 def Predict( customer , movie ): 
 
   Cust_Diff = eval(Cust(customer)) - 3.22
@@ -56,7 +59,7 @@ def Predict( customer , movie ):
 
   Prediction = 0.6 * Cust_Diff + 0.6 * Movie_Diff + 3.22
 
-  return Prediction 
+  return round(Prediction, 1) 
 
 def Netflix_Solve(r , w):
   a = Netflix_Read(r)
@@ -74,4 +77,4 @@ def Netflix_Solve(r , w):
   		w.write(str(i) + ':' + '\n')
   	w.write(str(v) + '\n')
   z = root_mean_squared_error(actual_list, prediction_list)
-  w.write('RMSE = ' + str(z))
+  w.write('RMSE = ' + str(round(z, 2)))
